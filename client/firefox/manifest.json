@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "FBrestrict",
+  "version": "2.0",
+  "description": "Client für FBRestrict-Server. FBRestrict erlaubt und kontrolliert den Zugang zu eingeschränkten FritzBox-Administrationsseiten; es ermöglicht somit eine granularere Rechtevergabe für FritzBox-Benutzer.",
+  "icons": {
+    "16": "icon/icon.svg",
+    "32": "icon/icon.svg",
+    "64": "icon/icon.svg",
+    "128": "icon/icon.svg",
+    "256": "icon/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["data/restrict.js"],
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+      "storage",
+      "<all_urls>"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fbrestrict@codecivil.de"
+    }
+  },
+  "developer": {
+	  "name": "codecivil",
+	  "url": "https://github.com/codecivil/fbrestrict"
+  }
+}
